@@ -1,0 +1,31 @@
+{
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "dist": true
+  },
+
+  "html.format.enable": true,
+  "html.format.endWithNewline": true,
+  "html.format.extraLiners": "head, body, header, section, footer, /html",
+  "html.format.wrapLineLength": 120,
+  "javascript.implicitProjectConfig.checkJs": true,
+
+  "problems.decorations.enabled": true,
+
+  "tslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.singleQuote": true,
+  "prettier.semi": false
+}
