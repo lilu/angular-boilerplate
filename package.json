@@ -23,6 +23,8 @@
     "angular-in-memory-web-api": "^0.6.0",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
+    "rxjs-tslint-rules": "^4.4.1",
+    "tslint-config-prettier": "^1.13.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
