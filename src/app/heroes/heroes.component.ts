@@ -9,7 +9,7 @@ import { Hero } from '../hero';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Hero[] = [];
 
   constructor(private heroService: HeroService) {}
 
