@@ -1,18 +1,18 @@
 /* HeroSearch private styles */
 .search-result li {
+  background-color: white;
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
-  width:195px;
-  height: 16px;
-  padding: 5px;
-  background-color: white;
   cursor: pointer;
+  height: 16px;
   list-style-type: none;
+  padding: 5px;
+  width: 195px;
 }
 
 .search-result li:hover {
-  background-color: #607D8B;
+  background-color: #607d8b;
 }
 
 .search-result li a {
@@ -28,10 +28,9 @@
   color: white;
 }
 #search-box {
-  width: 200px;
   height: 20px;
+  width: 200px;
 }
-
 
 ul.search-result {
   margin-top: 0;

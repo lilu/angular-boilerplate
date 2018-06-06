@@ -1,0 +1,11 @@
+plugins:
+  - stylelint-order
+  - stylelint-scss
+
+extends:
+  - stylelint-config-standard
+  - stylelint-config-idiomatic-order
+  - stylelint-config-sass-guidelines
+  - stylelint-config-prettier
+
+rules:
