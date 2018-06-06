@@ -1,26 +1,26 @@
 /* HeroDetailComponent's private CSS styles */
 label {
-  color: #607d8b;
   display: inline-block;
-  font-weight: bold;
-  margin: 0.5em 0;
   width: 3em;
+  margin: 0.5em 0;
+  color: #607d8b;
+  font-weight: bold;
 }
 input {
-  font-size: 1em;
   height: 2em;
   padding-left: 0.4em;
+  font-size: 1em;
 }
 
 button {
-  background-color: #eee;
+  padding: 5px 10px;
   border: none;
+  margin-top: 20px;
+  background-color: #eee;
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
-  font-family: Arial;
-  margin-top: 20px;
-  padding: 5px 10px;
+  font-family: Arial, sans-serif;
 }
 button:hover {
   background-color: #cfd8dc;

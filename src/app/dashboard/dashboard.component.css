@@ -1,8 +1,8 @@
 /* DashboardComponent's private CSS styles */
 [class*='col-'] {
-  float: left;
-  padding-bottom: 20px;
   padding-right: 20px;
+  padding-bottom: 20px;
+  float: left;
 }
 [class*='col-']:last-of-type {
   padding-right: 0;
@@ -10,9 +10,10 @@
 a {
   text-decoration: none;
 }
+
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -31,12 +32,12 @@ h4 {
   width: 25%;
 }
 .module {
+  min-width: 120px;
+  max-height: 120px;
+  padding: 20px;
   background-color: #607d8b;
   border-radius: 2px;
   color: #eee;
-  max-height: 120px;
-  min-width: 120px;
-  padding: 20px;
   text-align: center;
 }
 .module:hover {
@@ -52,8 +53,8 @@ h4 {
 }
 @media (max-width: 600px) {
   .module {
-    font-size: 10px;
     max-height: 75px;
+    font-size: 10px;
   }
 }
 @media (max-width: 1024px) {

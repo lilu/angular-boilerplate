@@ -11,17 +11,19 @@ body,
 input[text],
 button {
   color: crimson;
-  font-family: Cambria, Georgia;
+  font-family: Cambria, Georgia, sans-serif;
 }
 
 button.clear {
-  background-color: #eee;
+  padding: 5px 10px;
   border: none;
+  margin-bottom: 12px;
+  background-color: #eee;
   border-radius: 4px;
+  color: #888;
   cursor: pointer;
   cursor: hand;
-  font-family: Arial;
-  padding: 5px 10px;
+  font-family: Arial, sans-serif;
 }
 button:hover {
   background-color: #cfd8dc;
@@ -30,8 +32,4 @@ button:disabled {
   background-color: #eee;
   color: #aaa;
   cursor: auto;
-}
-button.clear {
-  color: #888;
-  margin-bottom: 12px;
 }

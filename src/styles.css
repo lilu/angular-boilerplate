@@ -17,7 +17,7 @@ body,
 input[text],
 button {
   color: #888;
-  font-family: Cambria, Georgia;
+  font-family: Cambria, Georgia, sans-serif;
 }
 
 /* everywhere else */
