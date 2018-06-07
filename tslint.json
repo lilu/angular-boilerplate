@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:latest", "rxjs-tslint-rules", "tslint-config-prettier"],
+  "extends": ["tslint:latest", "tslint-config-prettier"],
   "rulesDirectory": ["node_modules/codelyzer"],
   "rules": {
     "interface-name": [true, "never-prefix"],
