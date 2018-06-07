@@ -1,14 +1,14 @@
 /* HeroSearch private styles */
 .search-result li {
-  width: 195px;
-  height: 16px;
-  padding: 5px;
-  border-right: 1px solid gray;
+  background-color: white;
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
-  background-color: white;
+  border-right: 1px solid gray;
   cursor: pointer;
+  height: 16px;
   list-style-type: none;
+  padding: 5px;
+  width: 195px;
 }
 
 .search-result li:hover {
@@ -16,8 +16,8 @@
 }
 
 .search-result li a {
-  display: block;
   color: #888;
+  display: block;
   text-decoration: none;
 }
 
@@ -27,12 +27,13 @@
 .search-result li a:active {
   color: white;
 }
+
 #search-box {
-  width: 200px;
   height: 20px;
+  width: 200px;
 }
 
 ul.search-result {
-  padding-left: 0;
   margin-top: 0;
+  padding-left: 0;
 }
