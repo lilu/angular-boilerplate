@@ -2,8 +2,8 @@
   "name": "angular-tour-of-heroes",
   "version": "0.0.0",
   "scripts": {
-    "start": "nodemon --ext ts --watch 'webpack.*.ts' --exec 'yarn install && webpack-dev-server --config webpack.development.ts'",
-    "build": "yarn install && NODE_ENV=production webpack --config webpack.production.ts",
+    "start": "ng serve --aot --hmr --source-map",
+    "build": "ng build --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
