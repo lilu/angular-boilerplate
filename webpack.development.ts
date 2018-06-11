@@ -11,14 +11,14 @@ const config: webpack.Configuration = {
   devServer: {
     port: 4200,
     // publicPath: '/assets/',
-    // hot: true,
+    hot: true,
     historyApiFallback: true
-  }
+  },
 
-  // plugins: [
-  //   new webpack.NamedModulesPlugin(),
-  //   new webpack.HotModuleReplacementPlugin()
-  // ]
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
 
 export default merge(common, config);

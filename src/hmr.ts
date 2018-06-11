@@ -8,7 +8,9 @@ export const hmrBootstrap = (
   let ngModule: NgModuleRef<any>;
   module.hot.accept();
 
-  bootstrap().then(mod => (ngModule = mod));
+  bootstrap()
+    .then(mod => (ngModule = mod))
+    .catch(error => console.log(error));
 
   module.hot.dispose(() => {
     const appRef = ngModule.injector.get(ApplicationRef);
