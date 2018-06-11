@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "nodemon --ext ts --watch 'webpack.*.ts' --exec 'yarn install && webpack-dev-server --config webpack.development.ts'",
-    "build": "ng build",
+    "build": "yarn install && NODE_ENV=production webpack --config webpack.production.ts",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
