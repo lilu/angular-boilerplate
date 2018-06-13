@@ -1,7 +1,10 @@
 <div *ngIf="hero">
+  <!-- non-null assertion operator -->
   <h2>{{ hero!.name | uppercase }} Details</h2>
   <div>
-    <span>id: </span>{{hero!.id}}</div>
+    <!-- The safe navigation operator -->
+    <span>id: </span>{{hero?.id}}
+  </div>
   <div>
     <label>name:
       <!--
