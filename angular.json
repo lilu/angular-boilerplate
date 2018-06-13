@@ -55,7 +55,7 @@
             "hmr": true,
             "hmrWarning": false,
             "aot": true,
-            "evalSourceMap": true
+            "sourceMap": true
           },
           "configurations": {
             "production": {

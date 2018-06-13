@@ -4,7 +4,11 @@
     <span>id: </span>{{hero.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name" (keyup)="isUnchanged = false">
+      <!--
+        For DOM event, $event is a DOM event object
+        Has $event.target.value
+       -->
+      <input [(ngModel)]="hero.name" placeholder="name" (input)="changed($event)">
     </label>
   </div>
 </div>
