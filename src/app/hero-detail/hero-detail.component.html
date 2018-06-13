@@ -4,9 +4,13 @@
     <span>id: </span>{{hero.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name">
+      <input [(ngModel)]="hero.name" placeholder="name" (keyup)="isUnchanged = false">
     </label>
   </div>
 </div>
 <button (click)="goBack()">go back</button>
-<button (click)="save()">save</button>
+<!--
+Template binding works with DOM properties and events, not HTML attributes
+Attributes initialize DOM properties and then they are done. Property values can change; attribute values can't.
+-->
+<button [disabled]="isUnchanged" (click)="save()">save</button>

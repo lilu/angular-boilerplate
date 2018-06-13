@@ -4,6 +4,18 @@
   <label>Hero name:
     <input #heroName />
   </label>
+  <!--
+    Template statements:
+      Context:
+        1. Template variables
+        2. Component context
+  -->
+  <!--
+    Event bindings:
+      1. Directive event
+      2. Component event
+      3. Element event
+   -->
   <button (click)="add(heroName.value); heroName.value=''">
     add
   </button>
@@ -12,8 +24,25 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
+      <!--
+      Template expressions:
+        Guilde lines:
+          1. No visible side effects(unidirectional data flow)
+          2. Quick execution
+          3. Simplicity
+          4. Idempotence
+        Context:
+          1. Template variables
+          2. Directive context
+          3. Component context
+      -->
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
     <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
+
+<!-- Component property binding -->
+<!-- Brackets evaluate the template expression -->
+<app-hero-detail prefix="You are my" [hero]="heroes[0]"></app-hero-detail>
+<!-- <app-hero-detail hero="currentHero"></app-hero-detail> -->
