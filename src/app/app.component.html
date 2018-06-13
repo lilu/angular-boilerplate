@@ -5,3 +5,10 @@
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+
+<!--
+  Two-way bindings, equal to:
+  <app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
+-->
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>

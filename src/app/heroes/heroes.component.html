@@ -45,5 +45,6 @@
 
 <!-- Component property binding -->
 <!-- Brackets evaluate the template expression -->
+<!-- Custom events emitted from directive, $event as event payload -->
 <app-hero-detail *ngIf="selectedHero" prefix="You are my" [hero]="selectedHero" (deleteRequest)="delete($event)"></app-hero-detail>
 <!-- <app-hero-detail hero="currentHero"></app-hero-detail> -->
