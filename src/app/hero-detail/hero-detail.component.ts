@@ -9,11 +9,18 @@ import { HeroService } from '../hero.service';
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.scss']
+  // inputs: ['hero'],
+  // outputs: ['deleteRequest'],
+  // outputs: ['clicks:myClick']
 })
 export class HeroDetailComponent implements OnInit {
+  // Input: settable property, bound with property binding
   @Input() hero?: Hero;
-  isUnchanged = true;
+  // Output: observable property, bound with event binding
+  //   always returns EventEmitter
+  // @Output('myClick') clicks = new EventEmitter<string>();
   @Output() deleteRequest = new EventEmitter<Hero>();
+  isUnchanged = true;
 
   constructor(
     private route: ActivatedRoute,
