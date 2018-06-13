@@ -22,8 +22,10 @@
 </div>
 
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a (click)="select(hero)">
+  <!-- ngFor uses microsyntax, not template expression -->
+  <!-- template input variable -->
+  <li *ngFor="let hero of heroes; let i=index; trackBy: trackByHeroes">
+    <a (click)="select(hero)" id="hero-{{i+1}}">
       <!--
       Template expressions:
         Guilde lines:
