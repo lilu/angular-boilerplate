@@ -23,7 +23,7 @@
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
+    <a (click)="select(hero)">
       <!--
       Template expressions:
         Guilde lines:
@@ -36,7 +36,8 @@
           2. Directive context
           3. Component context
       -->
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <span class="badge">{{hero.id}}</span>
+      {{hero.name}}
     </a>
     <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
@@ -44,5 +45,5 @@
 
 <!-- Component property binding -->
 <!-- Brackets evaluate the template expression -->
-<app-hero-detail prefix="You are my" [hero]="heroes[0]"></app-hero-detail>
+<app-hero-detail *ngIf="selectedHero" prefix="You are my" [hero]="selectedHero" (deleteRequest)="delete($event)"></app-hero-detail>
 <!-- <app-hero-detail hero="currentHero"></app-hero-detail> -->
