@@ -2,6 +2,13 @@
 
 <div>
   <label>Hero name:
+    <!--
+      Template reference variable, reference to :
+      1. DOM elements
+      2. Directives (ngForm)
+        <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
+      The scope of a reference variable is the entire template
+    -->
     <input #heroName />
   </label>
   <!--
