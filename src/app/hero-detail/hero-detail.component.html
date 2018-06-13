@@ -6,7 +6,13 @@
     <label>name:
       <!--
         For DOM event, $event is a DOM event object
-        Has $event.target.value
+       -->
+      <!--
+        NgModel 2-way bindings, equal to:
+        <input [value]="hero.name"
+         (input)="hero.name=$event.target.value" >
+        <input [ngModel]="hero.name"
+          (ngModelChange)="hero.name=$event">
        -->
       <input [(ngModel)]="hero!.name" placeholder="name" (input)="changed()">
     </label>
