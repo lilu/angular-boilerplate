@@ -1,3 +1,16 @@
+/**
+  :host
+    target element that hosts the component
+  :host(.active)
+    including other selector
+  :host-context(.theme-light)
+    looks for any ancestor of the component
+  */
+:host {
+  border: 1px dashed grey;
+  display: block;
+}
+
 label {
   color: #607d8b;
   display: inline-block;
