@@ -21,6 +21,7 @@ export class HeroesComponent
   heroes: Hero[] = [];
   selectedHero?: Hero;
   oldSelectedHero?: Hero;
+  power = '';
 
   @ViewChild(HeroDetailComponent) detailComponent?: HeroDetailComponent;
 
@@ -34,13 +35,17 @@ export class HeroesComponent
   }
 
   ngAfterViewInit() {
-    this.msgService.add('Hero detail init');
+    this.msgService.add('Child view init');
   }
 
   ngAfterViewChecked() {
-    if (this.selectedHero !== this.oldSelectedHero) {
-      this.msgService.add('Hero selected changes!');
-    }
+    /**
+     * Unidirectional data flow rule prevents updating the parent view's in the same cycle
+     * So wait one turn
+     */
+    setTimeout(() => {
+      this.detailComponent && (this.power = this.detailComponent.power);
+    }, 0);
   }
 
   getHeroes() {
