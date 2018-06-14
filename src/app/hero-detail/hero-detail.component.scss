@@ -5,6 +5,8 @@
     including other selector
   :host-context(.theme-light)
     looks for any ancestor of the component
+  ::ng-deep
+    shadow-piercing descendant combinator to force a style down through the child component tree into all the child component views
   */
 :host {
   border: 1px dashed grey;
