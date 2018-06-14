@@ -35,6 +35,10 @@ import { MessageService } from '../message.service';
  *    Detect a change that Angular overlooked.
  *  AfterContentInit
  *  AfterContentChecked
+ *    Calls after Angular projects external content into the component
+ *    Content projection:
+ *      Import HTML content from outside the component and insert that content into the component's template in a designated spot.
+ *    `ng-content` and `ContentChild`
  *  AfterViewInit
  *  AfterViewChecked
  *    Calls after it creates a component's child view
