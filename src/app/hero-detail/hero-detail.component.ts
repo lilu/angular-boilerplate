@@ -27,14 +27,17 @@ import { MessageService } from '../message.service';
  * Lifecycle hooks:
  *  OnChanges
  *    Detects changes to input properties of the directive
+ *    Called after every change detection cycle!
  *  OnInit
  *    1. To perform complex initializations shortly after construction.
  *    2. To set up the component after Angular sets the input properties.
  *  DoCheck
+ *    Detect a change that Angular overlooked.
  *  AfterContentInit
  *  AfterContentChecked
  *  AfterViewInit
  *  AfterViewChecked
+ *    Calls after it creates a component's child view
  *  OnDestroy
  *    Unsubscrib/Observables and DOM events, stop interval timers
  */

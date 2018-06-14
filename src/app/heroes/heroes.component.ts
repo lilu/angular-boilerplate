@@ -1,21 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 
 import { Hero } from '../hero';
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent
+  implements OnInit, AfterViewChecked, AfterViewInit {
   heroes: Hero[] = [];
   selectedHero?: Hero;
+  oldSelectedHero?: Hero;
 
-  constructor(private heroService: HeroService) {}
+  @ViewChild(HeroDetailComponent) detailComponent?: HeroDetailComponent;
+
+  constructor(
+    private heroService: HeroService,
+    private msgService: MessageService
+  ) {}
 
   ngOnInit() {
     this.getHeroes();
+  }
+
+  ngAfterViewInit() {
+    this.msgService.add('Hero detail init');
+  }
+
+  ngAfterViewChecked() {
+    if (this.selectedHero !== this.oldSelectedHero) {
+      this.msgService.add('Hero selected changes!');
+    }
   }
 
   getHeroes() {
@@ -33,6 +58,7 @@ export class HeroesComponent implements OnInit {
   }
 
   select(hero: Hero) {
+    this.oldSelectedHero = this.selectedHero;
     this.selectedHero = hero;
   }
 
