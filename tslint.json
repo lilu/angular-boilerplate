@@ -17,6 +17,7 @@
       "check-format",
       "allow-leading-underscore"
     ],
+    "forin": false,
 
     "angular-whitespace": [true, "check-interpolation", "check-semicolon"],
     "directive-selector": [true, "attribute", "app", "camelCase"],
@@ -31,7 +32,6 @@
       "severity": "warn"
     },
     "eofline": true,
-    "forin": true,
     "import-blacklist": [true, "rxjs/Rx"],
     "import-spacing": true,
     "indent": [true, "spaces"],

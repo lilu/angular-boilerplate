@@ -1,9 +1,18 @@
 import { Location } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -13,7 +22,22 @@ import { HeroService } from '../hero.service';
   // outputs: ['deleteRequest'],
   // outputs: ['clicks:myClick']
 })
-export class HeroDetailComponent implements OnInit {
+/**
+ * Lifecycle hooks:
+ *  OnChanges
+ *    Detects changes to input properties of the directive
+ *  OnInit
+ *    1. To perform complex initializations shortly after construction.
+ *    2. To set up the component after Angular sets the input properties.
+ *  DoCheck
+ *  AfterContentInit
+ *  AfterContentChecked
+ *  AfterViewInit
+ *  AfterViewChecked
+ *  OnDestroy
+ *    Unsubscrib/Observables and DOM events, stop interval timers
+ */
+export class HeroDetailComponent implements OnInit, OnChanges {
   // Input: settable property, bound with property binding
   @Input() hero?: Hero;
   // Output: observable property, bound with event binding
@@ -25,11 +49,22 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    private location: Location,
+    private msgService: MessageService
   ) {}
 
   ngOnInit() {
     this.getHero();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    for (const prop in changes) {
+      const { currentValue: cur, previousValue: prev } = changes[prop];
+      this.msgService.add(`${prop} changes:
+        cur = ${JSON.stringify(cur)},
+        prev = ${JSON.stringify(prev)}
+      `);
+    }
   }
 
   getHero() {
