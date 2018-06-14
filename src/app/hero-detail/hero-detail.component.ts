@@ -48,6 +48,16 @@ import { MessageService } from '../message.service';
 export class HeroDetailComponent implements OnInit, OnChanges, DoCheck {
   // Input: settable property, bound with property binding
   @Input() hero?: Hero;
+  // Intercept input property
+  @Input()
+  set power(power: string) {
+    this._power = (power && power.trim()) || '<no power>';
+  }
+  get power(): string {
+    return this._power;
+  }
+  private _power = '';
+
   // Output: observable property, bound with event binding
   //   always returns EventEmitter
   // @Output('myClick') clicks = new EventEmitter<string>();
