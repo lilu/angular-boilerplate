@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import {
   Component,
+  DoCheck,
   EventEmitter,
   Input,
   OnChanges,
@@ -37,14 +38,16 @@ import { MessageService } from '../message.service';
  *  OnDestroy
  *    Unsubscrib/Observables and DOM events, stop interval timers
  */
-export class HeroDetailComponent implements OnInit, OnChanges {
+export class HeroDetailComponent implements OnInit, OnChanges, DoCheck {
   // Input: settable property, bound with property binding
   @Input() hero?: Hero;
   // Output: observable property, bound with event binding
   //   always returns EventEmitter
   // @Output('myClick') clicks = new EventEmitter<string>();
   @Output() deleteRequest = new EventEmitter<Hero>();
+
   isUnchanged = true;
+  oldHeroName = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -67,6 +70,27 @@ export class HeroDetailComponent implements OnInit, OnChanges {
     }
   }
 
+  ngDoCheck() {
+    if (!this.hero) {
+      return;
+    }
+
+    if (this.oldHeroName === '') {
+      this.oldHeroName = this.hero.name;
+      return;
+    }
+
+    this.isUnchanged = this.oldHeroName === this.hero.name;
+
+    if (!this.isUnchanged) {
+      this.msgService.add(
+        `DoCheck: Hero name changed to ${this.hero.name}
+        from ${this.oldHeroName}`
+      );
+      this.oldHeroName = this.hero.name;
+    }
+  }
+
   getHero() {
     const id = this.route.snapshot.paramMap.get('id');
     id && this.heroService.getHero(+id).subscribe(hero => (this.hero = hero));
@@ -79,10 +103,6 @@ export class HeroDetailComponent implements OnInit, OnChanges {
   save() {
     this.hero &&
       this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
-  }
-
-  changed() {
-    this.isUnchanged = false;
   }
 
   delete() {
